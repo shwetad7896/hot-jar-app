@@ -1,10 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {hotjar} from 'react-hotjar';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() =>{
+         hotjar.initialize(3284396, 6);
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +24,11 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <h2>Hello world</h2>
+      <div>
+        <input type="text"/>
+      </div>
     </div>
   );
 }
