@@ -7,7 +7,7 @@ import { useNavigate} from 'react-router-dom'
 function App() {
 
   useEffect(() =>{
-         hotjar.initialize(3284396, 6);
+    hotjar.initialize(3284655, 6);
   },[])
   const [btn1, setbtn1] = useState();
   // const navigate = useNavigate();
