@@ -1,17 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 import {hotjar} from 'react-hotjar';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate} from 'react-router-dom'
+
 
 function App() {
 
   useEffect(() =>{
          hotjar.initialize(3284396, 6);
   },[])
+  const [btn1, setbtn1] = useState();
+  // const navigate = useNavigate();
+  const handleclick = (e) =>{
+    const data = e.target.value;
+    setbtn1(e.target.value);
+    // navigate({
+    //   pathName:'/header'
+    // })
+    console.log(data);
+  }
 
   return (
     <div className="App">
       <h2>hello world</h2>
+      <img src=''/>
+      <button onClick={(e) => handleclick(e)}>submit</button>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
