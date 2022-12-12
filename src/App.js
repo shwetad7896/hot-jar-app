@@ -9,6 +9,7 @@ function App() {
   useEffect(() =>{
     hotjar.initialize(3284655, 6);
   },[])
+  //new code
   const [btn1, setbtn1] = useState();
   // const navigate = useNavigate();
   const handleclick = (e) =>{
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <h2>hello world</h2>
-      <img src=''/>
+      <img src='https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg' style={{height:'500px', width:'400px'}}/>
       <button onClick={(e) => handleclick(e)}>submit</button>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
