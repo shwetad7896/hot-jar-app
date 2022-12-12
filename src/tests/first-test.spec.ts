@@ -8,17 +8,21 @@ import {test, expect } from '@playwright/test';
 //     expect(name).toBe('Playwright');
 // });
 
-test('test', async ({ page }) => {
-    await page.goto('http://localhost:3000/');
-    await page.getByRole('textbox').click();
-    await page.getByRole('heading', { name: 'Hello world' }).nth(1).click();
-    await page.getByText('hello worldHello world').click();
-    await page.getByText('hello worldHello world').click();
-    await page.getByRole('textbox').click();
-    await page.getByRole('textbox').fill('');
-    await page.getByRole('heading', { name: 'hello world' }).first().click();
-    await page.getByRole('heading', { name: 'Hello world' }).nth(1).click();
-    await page.locator('#root div').filter({ hasText: 'hello worldHello world' }).locator('div').click();
-  });
 
+
+
+  test('testjjj', async ({ page }) => {
+    await page.goto('https://hot-jar-app.vercel.app/');
+    await page.getByRole('img').click();
+    await page.getByRole('heading', { name: 'hello world' }).first().click();
+    await page.getByRole('button', { name: 'submit' }).click({
+      clickCount: 4
+    });
+    await page.getByRole('button', { name: 'submit' }).click();
+    await page.locator('#root div').filter({ hasText: 'hello worldsubmitHello world' }).locator('div').click();
+    await page.getByRole('textbox').fill('Pratik Chakrborty');
+    await page.getByRole('button', { name: 'submit' }).click();
+    await page.getByRole('heading', { name: 'Hello world' }).nth(1).click();
+    await page.getByRole('img').click();
+  });
   

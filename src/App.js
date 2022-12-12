@@ -1,23 +1,22 @@
 import './App.css';
 import {hotjar} from 'react-hotjar';
 import { useEffect, useState } from 'react';
-import { useNavigate} from 'react-router-dom'
+import analytics from './analytics/analytics';
 
 
 function App() {
 
+  analytics.page(window.location.pathname)
   useEffect(() =>{
     hotjar.initialize(3284686, 6);
   },[])
+
   //new code
   const [btn1, setbtn1] = useState();
-  // const navigate = useNavigate();
   const handleclick = (e) =>{
     const data = e.target.value;
     setbtn1(e.target.value);
-    // navigate({
-    //   pathName:'/header'
-    // })
+
     console.log(data);
   }
 
